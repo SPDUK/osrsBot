@@ -3,7 +3,13 @@ Clone the folder into a folder called OsrsBot in the home directory
 
 `npm install`
 
-If install fails also install `sudo apt install libxtst-dev libpng++-dev` (on linux), this is for robotsJS to work properly.
+If install fails with robotsJS:
+`sudo apt install libxtst-dev libpng++-dev` (on linux)
+
+If install fails with imagemagick-native the path is wrong, add something similar to this to your bashrc/zshrc using the correct version:
+`export PATH=/usr/lib/x86_64-linux-gnu/ImageMagick-6.9.10/bin-q16:$PATH`
+
+#
 
 To start GUI (linux 86 only right now)
 `./GUI/osrsbot-x86_64.run`

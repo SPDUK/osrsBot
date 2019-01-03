@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "imagemagick-native": "^1.9.3",
+    "node-gyp": "^3.8.0",
+    "rebuild": "^0.1.2",
     "robotjs": "^0.5.1",
     "shelljs": "^0.8.3"
   }

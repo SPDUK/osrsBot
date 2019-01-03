@@ -11,10 +11,13 @@ if (!id) {
 // positions window at 0,0 (top left) and sizes it to the correct size for classic view
 function setupWindow() {
   shell.exec(`xdotool windowmove ${id} 0 0`);
-  shell.exec(`xdotool windowsize ${id} 768 580`);
+  shell.exec(`xdotool windowsize ${id} 768 505`);
 }
 function openWindow() {
   shell.exec(`xdotool windowactivate ${id}`);
+}
+function screenshot() {
+  shell.exec(`import -window root -crop 768x542+0-0 ./screenshots/${Date.now()}.jpg -screen`);
 }
 
 function minWindow() {
@@ -24,5 +27,6 @@ function minWindow() {
 setupWindow();
 openWindow();
 setTimeout(() => {
-  minWindow();
+  screenshot();
+  // minWindow();
 }, 1000);

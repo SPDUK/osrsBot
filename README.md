@@ -9,6 +9,11 @@ If install fails with robotsJS:
 If install fails with imagemagick-native the path is wrong, add something similar to this to your bashrc/zshrc using the correct version:
 `export PATH=/usr/lib/x86_64-linux-gnu/ImageMagick-6.9.10/bin-q16:$PATH`
 
+Things that might not work due to UI wierdness:
+`window.getWindowPos()` needs to be calibrated to the top left of the runescape window, but depending on tweaks made to the desktop the title bar might be larger/smaller than hard coded, so I might need to figure out how to find the title bar size and count that.
+
+Works with `Arc` gnome theme by default, but you can change it easily to work with any other setups by changing `return [x - 8, y - 30];` to whatever works for your UI setup
+
 #
 
 To start GUI (linux 86 only right now)

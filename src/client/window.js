@@ -4,8 +4,10 @@ const fs = require('fs');
 
 const window = {
   id: Number(shell.exec('xdotool search --name Runescape').stdout),
+  height: 505,
+  width: 768,
 
-  windowPos() {
+  getWindowPos() {
     const pos = shell.exec(`xdotool getwindowgeometry ${this.id}`).stdout;
     // get the x and y position where the window begins
     const [x, y] = pos
@@ -13,7 +15,7 @@ const window = {
       .split(' ')[3]
       .split(',');
 
-    return [x - 8, y - 40];
+    return [x - 8, y - 30]; // depends on window title bar, -8 -40 is for yaru
   },
 
   // sizes window to the correct size for classic view

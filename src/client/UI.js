@@ -67,20 +67,18 @@ const actions = {
       const color = img.colorAt(i, 0);
       if (specialColors.includes(color)) {
         UI.hotkeys.openCombat();
-        robot.setMouseDelay(randomNumber.small());
         // return a random x or y point on the special bar that is clickable
         const randX = () => Math.floor(Math.random() * 125) + 570;
         const randY = () => Math.floor(Math.random() * 15) + 410;
 
-        // over or undershoot randomly by 20 pixels positive or negative
-        const fakeX = randomNumber.randomRange(rsX + randX(), 20);
-        const fakeY = randomNumber.randomRange(rsY + randY(), 20);
-
+        // over or undershoot randomly by 15 pixels positive or negative
+        const fakeX = randomNumber.randomRange(rsX + randX(), 15);
+        const fakeY = randomNumber.randomRange(rsY + randY(), 15);
         robot.moveMouseSmooth(fakeX, fakeY);
-        robot.setMouseDelay(randomNumber.verySmall());
+        robot.setMouseDelay(randomNumber.small());
 
-        const [clickX, clickY] = [rsX + randX(), rsY + randY()];
-        robot.moveMouseSmooth(clickX, clickY);
+        // move to the actual part we wanted to initially click and click it after a medium delay
+        robot.moveMouseSmooth(rsX + randX(), rsY + randY());
         robot.setMouseDelay(randomNumber.medium());
         robot.mouseClick('left', false);
         robot.setMouseDelay(randomNumber.small());

@@ -1,5 +1,6 @@
 const robot = require('robotjs');
 var shell = require('shelljs');
+const fs = require('fs');
 
 const window = {
   id: Number(shell.exec('xdotool search --name Runescape').stdout),
@@ -30,7 +31,8 @@ const window = {
   },
 
   screenshot() {
-    shell.exec(`import -window root -crop 768x542+0-0 ./screenshots/${Date.now()}.png -screen`);
+    const [x, y] = this.windowPos();
+    shell.exec(`import -window root -crop ${x}x${y}+0-0 ./screenshots/${Date.now()}.png -screen`);
   }
 };
 

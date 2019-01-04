@@ -15,12 +15,12 @@ const window = {
       .split(' ')[3]
       .split(',');
 
-    return [x - 8, y - 30]; // depends on window title bar, -8 -40 is for yaru
+    return [x - 10, y - 45]; // depends on window title bar, -10 -45 is for yaru (maybe wrong still?)
   },
 
   // sizes window to the correct size for classic view
   setupWindow() {
-    // needs and extra 30~ pixels for non members
+    // needs and extra 30~ pixels for non members accounts
     shell.exec(`xdotool windowsize ${this.id} 768 505`);
   },
 

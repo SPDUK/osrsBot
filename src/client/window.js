@@ -33,8 +33,7 @@ const window = {
   },
 
   screenshot() {
-    const [x, y] = this.windowPos();
-    shell.exec(`import -window root -crop ${x}x${y}+0-0 ./screenshots/${Date.now()}.png -screen`);
+    shell.exec(`import -window ${this.id} ./screenshots/${Date.now()}.png`);
   }
 };
 

@@ -1,6 +1,5 @@
 const robot = require('robotjs');
 var shell = require('shelljs');
-const fs = require('fs');
 
 const window = {
   id: Number(shell.exec('xdotool search --name Runescape').stdout),

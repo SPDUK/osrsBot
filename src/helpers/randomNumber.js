@@ -42,6 +42,7 @@ const randomNumber = {
   veryBigRand: () => Math.floor(Math.random() * 300) + 200,
   // 550 to 700
   huge: () => Math.floor(Math.random() * 150) + 550,
+  AFK: () => Math.floor(Math.random() * 60000) + 20000,
   randomRange,
   randomXY
 };

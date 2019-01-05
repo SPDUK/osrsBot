@@ -1,7 +1,7 @@
 const robot = require('robotjs');
 const window = require('../client/window');
 const randomNumber = require('../helpers/randomNumber');
-const screenshot = require('./saveRobotScreenshot');
+const randomMouseMove = require('../helpers/randomMouseMove');
 const [rsX, rsY] = window.getWindowPos();
 
 // because mousekeys are allowed we don't need to randomize the left/right movements, they can just be set at a fixed amount of pixels, but the amount of time between clicks and moving the mouse should be randomized
@@ -11,8 +11,8 @@ function moveTopLeft() {
 
   // randomly overshoot
   if (Math.random() > 0.6) {
-    const overshootX = randomNumber.randomRange(randX, 5);
-    const overshootY = randomNumber.randomRange(randY, 5);
+    const overshootX = randomNumber.randomRange(randX, 130);
+    const overshootY = randomNumber.randomRange(randY, 130);
 
     robot.moveMouseSmooth(overshootX, overshootY);
     robot.setMouseDelay(randomNumber.small());
@@ -56,4 +56,12 @@ module.exports = function clickAllInventory() {
   clickLine(1);
   moveRight();
   clickLine(-1);
+
+  // for some reason robot.setMouseDelay isn't working
+  // move the mouse after finishing as to simulate bumping the mouse off the end position before moving on
+  const delay = Math.random() > 0.5 ? randomNumber.huge() : randomNumber.veryBigRand();
+  setTimeout(() => {
+    const pos = robot.getMousePos();
+    randomMouseMove(pos.x, pos.y);
+  }, delay);
 };

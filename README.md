@@ -26,8 +26,11 @@ Works with `Yaru` (ubuntu GNOME) theme by default, but you can change it easily 
 
 - Bank:
 
-  - You must have unlocked your bank pin before starting a script.
+  - You must have unlocked your bank pin before starting a script
   - Use withdraw-x and enter a number over the inventory limit, such as 999999.
+  - Rearrange Mode: Swap
+  - Withdraw as: item
+  - quantity: all
 
 - Screen:
   - Use fixed size.

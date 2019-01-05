@@ -26,11 +26,14 @@ function randomXY(x, y, xRange, yRange) {
 }
 
 const randomNumber = {
+  // 10 to 40
+  verySmall: () => Math.floor(Math.random() * 30) + 10,
   // 20 to 70
-  verySmall: () => Math.floor(Math.random() * 10) + 5,
   small: () => Math.floor(Math.random() * 50) + 20,
   // 20 to 120
   medium: () => Math.floor(Math.random() * 100) + 20,
+  // 80 to 280
+  mediumRand: () => Math.floor(Math.random() * 200) + 80,
   // 80 to 180
   big: () => Math.floor(Math.random() * 100) + 80,
   // 150 to 300

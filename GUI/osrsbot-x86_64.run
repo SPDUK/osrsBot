@@ -1,15 +1,15 @@
 #!/bin/sh
 # This script was generated using Makeself 2.1.4
-FULLSIZE=1586
+FULLSIZE=1804
 CRCsum="0000000000"
-MD5="8408c362536a56519e1e818726e90f95"
+MD5="a12b291a9d62a34b45648539f471aa9e"
 TMPROOT=${TMPDIR:=/tmp}
 
 label="Osrsbot"
 script="./sh-install"
 scriptargs=""
 targetdir="dist"
-filesizes="762"
+filesizes="828"
 keep=n
 
 print_cmd_arg=""
@@ -142,7 +142,7 @@ do
 	echo Target directory: "$targetdir"
 	echo Uncompressed size: 2 KB
 	echo Compression: gzip
-	echo Date of packaging: 2019-01-02 21:18:17 +0000
+	echo Date of packaging: 2019-01-05 13:12:28 +0000
 	echo Built with Makeself version 2.1.4 on 
 	echo Build command was: "/usr/bin/makeself \\
     \"dist\" \\
@@ -373,7 +373,9 @@ if test "$keep" = n; then
     /bin/rm -rf $tmpdir
 fi
 eval $finish; exit $res
-‹ ™*-\ íUmkÛ0ÎgÿŠ«È‹ÄM;ZÒc-+¬š}Œ‘È¶{‘¥L’›vöÛ§—ØyiYºÑRÆr`K~tº{t¾ÓÉ´•1©0¥µg“¶–ã^ÏZ¶ÇîQï¸Ö	;a·Ûë†Z»†a»íç£´’B^h*‹”ßÅ`×úöáş©QÆ™zu™r"G)—ªìÜÏorÌ2Šı˜ç¨TÀ"Nû‹<TX!h5V‚yÑ,$¡$VUöE„¼]>Ö]Ü¾=–ØNÙúğTšÉQ’‰şx¾HÆ^..?_ŸÀ„$D`J$H%26m­ 	DæXJ’@Æ`"x®?ãj•Ò»±†Wço‘`éG¼P</›ÀhİBIP«v†à+œ‚J	ó ,Ò¿¯ãM2¯îLü(M¬m¬¯v®páÓApÖXlø&qÊ½çF9NÌáU\uÈ t”2!ÕPâS¢|š±ÌZß¡5€2hB+•çÍgSÍğUÃ. 5ëĞ=r°‚Ò×Ö×ÖYÍÖ²†Í'=udbmÄ·¨£c¾¡%‘ƒ—%¢	:ğ	=†’!õKEï­H&:£TœúËeÇÎB6ZÜE«bY®”à_°|ÏòoK.„&›$gM“Œ%–%pá¢ŠV;n3Óå·Î§j0¹U’ÕÙ¶Q„k$L
-İWZ®8>& &õ.]Ç!ÂU[£Ú¾o9å3]ĞšÃzÆ;7˜Âf¨LÀ<TËÆfÆiÎĞMh—¢õ°KÇfh`H±Ô÷a°\×—ˆâ°*q[ÜnÃuÁ˜-¼ò~
-¸2âÊŞZÛ·ÂƒjŞ“ßÿ+ÛOnº’ı¿İm‡ûşÿBb³ØÇó9¨LQrÍÁğzï¸jBÂMá+İ!ÇB·Ãè´
-JqÍ¡Ÿ‚¨Ò72f<!ğ3èäÒ–)âÀ$Ù79¶„%{›ç¥C°—½ìe/ÿ¥ü³ºÈm   
+‹ <­0\ íUmOÛ0æs~Å‘Vê&­I-L òachHCHtÒ&M8‰K<;³
+û°ß¾³İô…·²	6MêI­“óù¹Ç—{Ñy›	mçkÏ&”í~ß­(7×­şöZw³×íu7¶zÛ½µNws³·±ç£4“
+/¯Ê8§ô¡,Û¿y¹ÿDëqÂD¬ó ¡sIõi.µ„î9*."'Q*‹°6 *Í!QE>šê*Åas—UÂYkÊijbg©$–ù˜wqõzët«Wë–¸ğÆÎG`r¦O3¦gå8;ppøùèİŒhFáTƒ6Š‰s@´ŠgP(‰Ö4&`¤d¯é9G“Ú»E›ïŞÅ‘ÓÄcÂ/H"+B°|öÔÑ<vO!|…]09€ÓnÛ#4<Äbî`cvr€Ÿª~ğÖçX,ø¦i.!Ü—cÁ%Éìå›Ó¸bÈ 0JLió
+Œº†ñ95*í:í?´¿CûÚ¡Õf|ªë{–çÈğEÓm„sè°±gô2ç/¯wµGÈZ6ñÑ“I$rZOÇ¾C[‡^e¹L4HĞ+›Ğc(YRˆ6üÚÓJt†eÒ<šl{vNå¢%}´¦,ëZù,Ç³şÚZ*…dS›ä¢e`ÄDæX‚T>ªáìÄ3Ğİ¼c>M›[5YÌ¶…"œ#aSè¶ÑdÇó9°°©wè'U¾ÚšÓsESqÕíæ3Şâ\‹¡² {pWmL›LóBf€Ch™¡ó°ÌÆİfhÕıƒ
+˜ìc1f%îŠÛ8©„p…W÷§Xj¥i\×ºÙî4¼ÿÏ°Ÿz*Kæ§¿Ù¿5ÿû«ùÿWÄeqDÊ3œî@ëxx2„7Ò´ “¶ğÎB(ˆÂq¸İ×$•1R@kHMUÂ'l-rû¬ B3)t«¶82£ğ3>ÆTCÜX+œÚ©b¥ÁÚ²§£oúÌÙR‘-`¿Í)úa·Ò%MV&1ÁFVi
+Ì<Ò=ÄıÎ8%rª’Ç’¿ÔşÛß¿ş¸+YÉJVò€üÛô5:   

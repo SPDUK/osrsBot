@@ -1,3 +1,7 @@
+### Requirements: xdotool, nodejs, imagemagick
+
+### How to install:
+
 Clone the folder into a folder called OsrsBot in the home directory
 `git clone git@github.com:SPDUK/osrsBot.git ~/OsrsBot && cd ~/OsrsBot`
 
@@ -18,11 +22,11 @@ Works with `Yaru` (ubuntu GNOME) theme by default, but you can change it easily 
 
 #
 
-Runescape rebinds needed:
+### Runescape rebinds needed:
 
 - Bank:
 
-  - For obvious reasons you must place your bank pin before starting any script that uses the bank.
+  - You must have unlocked your bank pin before starting a script.
   - Use withdraw-x and enter a number over the inventory limit, such as 999999.
 
 - Screen:
@@ -30,8 +34,8 @@ Runescape rebinds needed:
   - Allow mouse zooming (different scripts will use different screen zooms).
   - Brightness to max.
 - Controls / Joystick Icon(?)
-- Mouse buttons 2.
-- Shift click to drop items ON.
+  - Mouse buttons 2.
+  - Shift click to drop items ON.
 - Rebind keys
   - Restore defaults -> Rebind logout(door) to F12, music hotkey will be none.
   - esc closes current interface ON

@@ -2,7 +2,7 @@ const robot = require('robotjs');
 var shell = require('shelljs');
 
 const window = {
-  id: Number(shell.exec('xdotool search --name Runescape').stdout),
+  id: Number(shell.exec('xdotool search --name Old').stdout),
   height: 505,
   width: 768,
 

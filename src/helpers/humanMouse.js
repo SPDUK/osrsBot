@@ -1,6 +1,4 @@
 const robot = require('robotjs');
-const screenshot = require('../helpers/saveRobotScreenshot');
-const window = require('../client/window');
 
 function MouseMovementCalculator(gravity, wind, mouseSpeed, targetError) {
   this.gravity = gravity;

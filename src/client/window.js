@@ -1,5 +1,4 @@
-const robot = require('robotjs');
-var shell = require('shelljs');
+const shell = require('shelljs');
 
 const window = {
   id: Number(shell.exec('xdotool search --name Old').stdout),
@@ -33,7 +32,7 @@ const window = {
 
   screenshot() {
     shell.exec(`import -window ${this.id} ./screenshots/${Date.now()}.png`);
-  }
+  },
 };
 
 module.exports = window;

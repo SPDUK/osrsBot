@@ -10,22 +10,18 @@ const UIElements = {
 };
 // must rebind the logout key from default (none) to f12,
 const hotkeys = {
-  openInventory() {
-    robot.keyTap('escape');
-  },
   closeBank() {
     robot.keyTap('escape');
   },
   openCombat() {
     robot.keyTap('f1');
   },
-  openStats() {
+  openInventory() {
     robot.keyTap('f2');
   },
   openQuests() {
     robot.keyTap('f3');
   },
-
   openEquipment() {
     robot.keyTap('f4');
   },
@@ -52,11 +48,11 @@ const hotkeys = {
   },
   openLogout() {
     robot.keyTap('f12');
-  }
+  },
 };
 
 const actions = {
-  //TODO: break this up into smaller functions
+  // TODO: break this up into smaller functions
   useSpecial() {
     // colors that the UI uses at the very top of the special mater, if we find one in those pixels at the top we use special.
     const specialColors = ['0d6f85', '086176', '1e96b3'];
@@ -64,7 +60,7 @@ const actions = {
 
     const [rsX, rsY] = window.getWindowPos();
     const img = robot.screen.capture(rsX + 585, rsY + 136, 8, 1);
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i += 1) {
       const color = img.colorAt(i, 0);
       if (specialColors.includes(color)) {
         UI.hotkeys.openCombat();
@@ -92,12 +88,12 @@ const actions = {
         console.log(`special not ready || color: ${color}`);
       }
     }
-  }
+  },
 };
 
 const UI = {
   hotkeys,
-  actions
+  actions,
 };
 
 module.exports = UI;

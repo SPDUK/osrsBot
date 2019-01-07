@@ -1,6 +1,7 @@
-const randomNumber = require('./randomNumber');
 const robot = require('robotjs');
+const randomNumber = require('./randomNumber');
 const humanMouse = require('../helpers/humanMouse');
+
 module.exports = function randomMouseMove(x, y) {
   // vary the delays between moving to overX and over Y
   const overX = randomNumber.randomRange(x, randomNumber.small());

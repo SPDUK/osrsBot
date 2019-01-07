@@ -40,7 +40,7 @@ Works with `Yaru` (ubuntu GNOME) theme by default, but you can change it easily 
   - Mouse buttons 2.
   - Shift click to drop items ON.
 - Rebind keys
-  - Restore defaults -> Rebind logout(door) to F12, music hotkey will be none.
+  - Restore defaults -> Rebind inventory to f2, Rebind logout(door) to F12, music hotkey will be none.
   - esc closes current interface ON
 - Advanced options:
   - Always hide roofs.

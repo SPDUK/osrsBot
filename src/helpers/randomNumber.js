@@ -9,7 +9,7 @@ function randomRange(n, amount) {
   return n + Math.floor(Math.random() * amount) * randomSign;
 }
 
-/** @module 
+/** @module
  Generates a random x, y position in any given range.
  From 0, TO xRange, not including.
  randomXY(0,0,25,25) can return anything from [0,0] to [24,24]
@@ -32,8 +32,8 @@ const randomNumber = {
   small: () => Math.floor(Math.random() * 50) + 20,
   // 20 to 120
   medium: () => Math.floor(Math.random() * 100) + 20,
-  // 80 to 280
-  mediumRand: () => Math.floor(Math.random() * 200) + 80,
+  // 30 to 200
+  mediumRand: () => Math.floor(Math.random() * 200) + 30,
   // 80 to 180
   big: () => Math.floor(Math.random() * 100) + 80,
   // 150 to 300
@@ -44,7 +44,7 @@ const randomNumber = {
   huge: () => Math.floor(Math.random() * 150) + 550,
   AFK: () => Math.floor(Math.random() * 60000) + 20000,
   randomRange,
-  randomXY
+  randomXY,
 };
 
 module.exports = randomNumber;

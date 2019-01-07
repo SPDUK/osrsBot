@@ -2,7 +2,6 @@ const shelljs = require('shelljs');
 const robot = require('robotjs');
 const window = require('../client/window');
 const UI = require('../client/UI');
-const screenshot = require('../helpers/saveRobotScreenshot');
 const humanMouse = require('../helpers/humanMouse');
 const randomNumber = require('../helpers/randomNumber');
 const randomMouseMove = require('../helpers/randomMouseMove');
@@ -11,25 +10,6 @@ const randomOvershoot = require('../helpers/randomOvershoot');
 const AFKcheck = require('../helpers/AFKcheck');
 
 const [rsX, rsY] = window.getWindowPos();
-
-// step 1 - setup window and UI)
-// ...... Not yet added these yet
-// open settings and zoom all the way in
-// open bank
-// mouse to 9th tab and click
-
-// step 2)
-// mouse to castlewars bank spot (7th across, 5th down)
-// click it with withdraw quantity all on
-// close bank (esc
-
-// step 3)
-// move mouse to top left inventory spot,
-// move through entire inventory, click each time, then move to next
-// create functions to clean in a line straight down and straight up
-// a loop that goes down -> right -> up right -> down up -> bank
-
-// step 4) open the bank and click deposit inventory
 
 function openBank() {
   if (Math.random() > 0.7) {
@@ -52,20 +32,10 @@ function getXItems() {
   const pos = robot.getMousePos();
 
   // using random because it can be either left or right of the mouse, and we want to get a random y between 65 and 75.
+  const randX = randomNumber.randomRange(pos.x, 101);
+  const randY = randomNumber.randomRange(pos.y + 70, 5);
 
-  const randX = randomNumber.randomRange(pos.x, 100);
-  const randY = randomNumber.randomRange(pos.y + 70, 4);
-
-  if (Math.random() > 0.6) {
-    const fakeX = randomNumber.randomRange(randX, 1);
-    const fakeY = randomNumber.randomRange(randY, 1);
-    humanMouse.moveSmall(fakeX, fakeY);
-    // robot.setMouseDelay(randomNumber.small());
-  }
-
-  // I have no idea which of these is important
   humanMouse.moveSmall(randX, randY);
-  // robot.setMouseDelay(randomNumber.medium());
   randomMouseClick();
 }
 function getItems() {
@@ -131,8 +101,8 @@ function craftLoop() {
 }
 
 // setup game window
-// window.setupWindow();
-// window.openWindow();
+window.setupWindow();
+window.openWindow();
 
 robot.mouseToggle('down', 'left');
 

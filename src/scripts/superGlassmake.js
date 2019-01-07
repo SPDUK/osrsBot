@@ -8,17 +8,10 @@ const randomMouseMove = require('../helpers/randomMouseMove');
 const randomMouseClick = require('../helpers/randomMouseClick');
 const randomOvershoot = require('../helpers/randomOvershoot');
 const AFKcheck = require('../helpers/AFKcheck');
+const screenshot = require('../helpers/saveRobotScreenshot');
+const bank = require('../helpers/bank');
 
 const [rsX, rsY] = window.getWindowPos();
-
-function openBank() {
-  if (Math.random() > 0.7) {
-    randomMouseMove(rsX + 360, rsY + 205);
-  }
-  const [x, y] = randomNumber.randomXY(360, 205, 70, 55);
-  humanMouse.moveSmall(rsX + x, rsY + y);
-  randomMouseClick();
-}
 
 function moveToItem(x, y) {
   if (Math.random() > 0.7) {
@@ -87,9 +80,9 @@ function craftLoop() {
   clickGlassmake();
   // go "AFK" randomly, else set a medium delay
   if (!AFKcheck()) {
-    robot.setMouseDelay(Math.floor(Math.random() * 1600) + 3000);
+    robot.setMouseDelay(Math.floor(Math.random() * 2000) + 3600);
   }
-  openBank();
+  bank.openBank(bank.banks.GE);
   if (!AFKcheck()) {
     robot.setMouseDelay(Math.floor(Math.random() * 1600) + 2600);
   }
@@ -99,13 +92,13 @@ function craftLoop() {
   }
   getItems();
 }
-
 // setup game window
 window.setupWindow();
 window.openWindow();
+UI.hotkeys.openMagic();
 
-// open bank and get items for the first time
-openBank();
+// // open bank and get items for the first time
+bank.openBank(bank.banks.GE);
 robot.setMouseDelay(Math.floor(Math.random() * 2000) + 1300);
 getItems();
 

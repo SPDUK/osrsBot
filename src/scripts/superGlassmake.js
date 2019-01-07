@@ -104,8 +104,6 @@ function craftLoop() {
 window.setupWindow();
 window.openWindow();
 
-robot.mouseToggle('down', 'left');
-
 // open bank and get items for the first time
 openBank();
 robot.setMouseDelay(Math.floor(Math.random() * 2000) + 1300);

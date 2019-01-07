@@ -1,6 +1,7 @@
 const robot = require('robotjs');
 const window = require('./window');
 const randomNumber = require('../helpers/randomNumber');
+const humanMouse = require('../helpers/humanMouse');
 
 const UIElements = {
   // special bar
@@ -73,11 +74,11 @@ const actions = {
         // over or undershoot randomly by 15 pixels positive or negative
         const fakeX = randomNumber.randomRange(rsX + randX, 15);
         const fakeY = randomNumber.randomRange(rsY + randY, 15);
-        robot.moveMouseSmooth(fakeX, fakeY);
+        humanMouse.moveBig(fakeX, fakeY);
         robot.setMouseDelay(randomNumber.small());
 
         // move to the actual part we wanted to initially click and click it after a medium delay
-        robot.moveMouseSmooth(rsX + randX, rsY + randY);
+        humanMouse.moveSmall(rsX + randX, rsY + randY);
         robot.setMouseDelay(randomNumber.medium());
         robot.mouseClick('left', false);
 

@@ -5,6 +5,9 @@ const window = require('../client/window');
 window.setupWindow();
 window.openWindow();
 
-robot.keyToggle('shift', 'down');
-clickAllInventory();
-robot.keyToggle('shift', 'up');
+// just for debugging incase the window isn't open/setup when using console
+setTimeout(() => {
+  robot.keyToggle('shift', 'down');
+  clickAllInventory();
+  robot.keyToggle('shift', 'up');
+}, 100);

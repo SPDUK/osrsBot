@@ -3,6 +3,7 @@ const window = require('../client/window');
 const randomNumber = require('../helpers/randomNumber');
 const randomMouseMove = require('../helpers/randomMouseMove');
 const [rsX, rsY] = window.getWindowPos();
+const humanMouse = require('../helpers/humanMouse');
 
 // because mousekeys are allowed we don't need to randomize the left/right movements, they can just be set at a fixed amount of pixels, but the amount of time between clicks and moving the mouse should be randomized
 
@@ -14,19 +15,16 @@ function moveTopLeft() {
     const overshootX = randomNumber.randomRange(randX, 130);
     const overshootY = randomNumber.randomRange(randY, 130);
 
-    robot.moveMouseSmooth(overshootX, overshootY);
-    robot.setMouseDelay(randomNumber.small());
+    humanMouse.moveBig(overshootX, overshootY);
   }
 
   // move to the correct position
-  robot.moveMouseSmooth(randX, randY);
-  robot.setMouseDelay(randomNumber.mediumRand());
+  humanMouse.moveSmall(randX, randY);
 }
 
 function moveRight() {
   const pos = robot.getMousePos();
-  robot.setMouseDelay(randomNumber.mediumRand());
-  robot.moveMouseSmooth(pos.x + 43, pos.y);
+  humanMouse.moveSmall(pos.x + 43, pos.y);
 }
 function clickLine(direction) {
   const pos = robot.getMousePos();
@@ -38,11 +36,14 @@ function clickLine(direction) {
     if (Math.random() > 0.3) {
       delay = randomNumber.big();
     }
-    robot.mouseClick();
+    if (Math.random() > 0.95) {
+      delay = randomNumber.verySmall();
+    }
     robot.setMouseDelay(delay);
+    robot.mouseClick();
     n += 36 * direction;
     if (i !== 6) {
-      robot.moveMouseSmooth(pos.x, pos.y + n);
+      humanMouse.moveSmall(pos.x, pos.y + n);
     }
   }
 }

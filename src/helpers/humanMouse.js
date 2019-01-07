@@ -92,4 +92,37 @@ MouseMovementCalculator.prototype._calcVelocity = function(curCoords, endCoords,
   return [veloX, veloY];
 };
 
-module.exports = MouseMovementCalculator;
+function moveBig(x, y) {
+  const pos = robot.getMousePos();
+  const gravity = Math.floor(Math.random() * 9 + 4);
+  const wind = Math.floor(Math.random() * 2 + 1);
+  const speed = Math.floor(Math.random() * 45 + 4);
+
+  const mouseCalc = new MouseMovementCalculator(gravity, wind, speed, 1);
+  const coordsAndDelay = mouseCalc.calcCoordsAndDelay([pos.x, pos.y], [x, y]);
+  for (const move of coordsAndDelay) {
+    const [x, y] = move.coords;
+    robot.moveMouse(x, y);
+    robot.setMouseDelay(move.delay);
+  }
+}
+
+function moveSmall(x, y) {
+  const pos = robot.getMousePos();
+  const gravity = Math.floor(Math.random() * 9 + 4);
+  const wind = Math.floor(Math.random() * 4 + 1);
+  const speed = Math.floor(Math.random() * 60 + 20);
+  const mouseCalc = new MouseMovementCalculator(gravity, wind, speed, 1);
+
+  const coordsAndDelay = mouseCalc.calcCoordsAndDelay([pos.x, pos.y], [x, y]);
+
+  for (const move of coordsAndDelay) {
+    const [x, y] = move.coords;
+    robot.moveMouse(x, y);
+    robot.setMouseDelay(move.delay);
+  }
+}
+
+const humanMouse = { moveBig, moveSmall };
+
+module.exports = humanMouse;

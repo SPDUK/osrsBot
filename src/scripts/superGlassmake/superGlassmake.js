@@ -1,15 +1,15 @@
 const shelljs = require('shelljs');
 const robot = require('robotjs');
-const window = require('../client/window');
-const UI = require('../client/UI');
-const humanMouse = require('../helpers/humanMouse');
-const randomNumber = require('../helpers/randomNumber');
-const randomMouseMove = require('../helpers/randomMouseMove');
-const randomMouseClick = require('../helpers/randomMouseClick');
-const randomOvershoot = require('../helpers/randomOvershoot');
-const AFKcheck = require('../helpers/AFKcheck');
-const screenshot = require('../helpers/saveRobotScreenshot');
-const bank = require('../helpers/bank');
+const window = require('../../client/window');
+const UI = require('../../client/UI');
+const humanMouse = require('../../helpers/humanMouse');
+const randomNumber = require('../../helpers/randomNumber');
+const randomMouseMove = require('../../helpers/randomMouseMove');
+const randomMouseClick = require('../../helpers/randomMouseClick');
+const randomOvershoot = require('../../helpers/randomOvershoot');
+const AFKcheck = require('../../helpers/AFKcheck');
+const screenshot = require('../../helpers/saveRobotScreenshot');
+const bank = require('../../helpers/bank');
 
 const [rsX, rsY] = window.getWindowPos();
 
@@ -80,11 +80,11 @@ function craftLoop() {
   clickGlassmake();
   // go "AFK" randomly, else set a medium delay
   if (!AFKcheck()) {
-    robot.setMouseDelay(Math.floor(Math.random() * 2000) + 3600);
+    robot.setMouseDelay(Math.floor(Math.random() * 2000) + 4500);
   }
   bank.openBank(bank.banks.GE);
   if (!AFKcheck()) {
-    robot.setMouseDelay(Math.floor(Math.random() * 1600) + 2600);
+    robot.setMouseDelay(Math.floor(Math.random() * 2000) + 3600);
   }
   clickDeposit();
   if (!AFKcheck()) {

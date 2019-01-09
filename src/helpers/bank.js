@@ -17,8 +17,8 @@ const castleWars = {
 const GE = {
   x: 158,
   y: 128,
-  xRange: 220,
-  yRange: 110,
+  xRange: 120,
+  yRange: 90,
 };
 
 function openBank(bank) {

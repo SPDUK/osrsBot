@@ -8,7 +8,6 @@ const randomMouseMove = require('../../helpers/randomMouseMove');
 const randomMouseClick = require('../../helpers/randomMouseClick');
 const randomOvershoot = require('../../helpers/randomOvershoot');
 const AFKcheck = require('../../helpers/AFKcheck');
-const screenshot = require('../../helpers/saveRobotScreenshot');
 const bank = require('../../helpers/bank');
 
 const [rsX, rsY] = window.getWindowPos();

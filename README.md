@@ -12,6 +12,7 @@ The click times are also random, so each click isn't just an instant 1ms click b
 It will sometimes go AFK at random parts of the script, hopefully human-like, for a random amount of time, but no longer than 3~ minutes.
 
 ## How do I run a script?
+**Right now you have to do a bit of manual editing of the code, such as picking a bank you are using.** 
 
 Spend 2 minutes reading this readme to set things up, each folder inside scripts will have it's own readme that says the specific things needed to do to make the script work, as they're not smart enough to automate everything just yet.
 

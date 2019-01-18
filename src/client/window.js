@@ -13,7 +13,8 @@ const window = {
       .split(' ')[3]
       .split(',');
 
-    return [x - 10, y - 45]; // depends on window title bar, -10 -45 is for yaru (maybe wrong still?)
+    // depends on window title bar, x-10 y-45 is for yaru on ubuntu GNOME, for KDE it doesn't need anything, depends on distro I suppose.
+    return [Number(x), Number(y)];
   },
 
   // sizes window to the correct size for classic view

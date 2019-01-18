@@ -20,7 +20,7 @@ Spend 2 minutes reading this readme to set things up, each folder inside scripts
 Clone the folder into a folder called OsrsBot in the home directory
 `git clone git@github.com:SPDUK/osrsBot.git ~/OsrsBot && cd ~/OsrsBot`
 
-`npm install`
+`npm install` or `yarn`
 
 If install fails with robotsJS:
 `sudo apt install libxtst-dev libpng++-dev` (on linux)
@@ -30,7 +30,11 @@ When you first start a script, if you have a window tab with the name "Old" in i
 
 `window.getWindowPos()` needs to be calibrated to the top left of the runescape window, but depending on tweaks made to the desktop the title bar might be larger/smaller than hard coded, so I might need to figure out how to find the title bar size and count that.
 
-Works with `Yaru` (ubuntu GNOME 18.10) theme by default, but you can change it easily to work with any other setups by changing `return [x - 10, y - 45]` in window.js to whatever the window settings are on your theme.
+Works with KDE by default,
+**depending on the distro the window might report incorrect x,y positions and not count the title bar as part of the window.**
+You can change it easily to work with any other setups by changing `return [x, y]` in window.js to whatever the window settings are on your theme, for example `return [x-10, y-45]` is for the Yaru theme on ubuntu GNOME.
+
+I'll figure out a way to automate this later on.
 
 #
 

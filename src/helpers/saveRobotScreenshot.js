@@ -1,20 +1,20 @@
 // Warning: VERY SLOW. Will take 20 seconds to complete a full screenshot.
 
 const robot = require('robotjs');
-const window = require('../client/window');
 const Jimp = require('jimp');
+const window = require('../client/window');
 
 /** @module
    Should not be called manually and is just a helper function.
    */
 function createPngFromBuffer(jImg, rImg, screen_x, screen_y) {
-  for (var x = 0; x < screen_x; x++) {
-    for (var y = 0; y < screen_y; y++) {
+  for (let x = 0; x < screen_x; x++) {
+    for (let y = 0; y < screen_y; y++) {
       // hex is a string, rrggbb format
-      var hex = rImg.colorAt(x, y);
+      const hex = rImg.colorAt(x, y);
       // Jimp expects an Int, with RGBA data,
       // so add FF as 'full opaque' to RGB color
-      var num = parseInt(hex + 'ff', 16);
+      const num = parseInt(`${hex}ff`, 16);
       // Set pixel manually
       jImg.setPixelColor(num, x, y);
     }
